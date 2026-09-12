@@ -1,0 +1,69 @@
+MisoTweaks Live Inputs
+
+Based on MisoTweaks by missonance:
+https://github.com/missonance/misotweaks
+
+Upstream revision:
+211ac86a2e7266e9228f74e42096db3922ad767d
+
+Modified in 2026 to add:
+- deterministic input playback through the real-time player-car simulation;
+- map-independent misoclip selection and replay;
+- misoclip duplication;
+- an input-set-to-misoclip converter;
+- an arm-and-keybind start flow with no persistent driving HUD;
+- multiplayer live-input playback;
+- a local-only fake finish/PB presentation and leaderboard/PB safeguards;
+- compact millisecond,WASD converter input;
+- the original native MisoTweaks/PolyTrack PB announcer for local replay finishes;
+- replay-time PB differences, leaderboard ranks, and medal placements in the finish presentation;
+- persistent multi-file press/release sound pools for every live replay driving direction;
+- independent 0–500% typed volume controls for every custom sound and replay sound pool;
+- separate global car-sound and skidding-sound volume controls;
+- reliable replay-key audio startup with master-output fallback, raw-state checking, and pool previews;
+- converter account identity and persistent map-lock options;
+- misoclip input extraction in all converter formats;
+- documentation and parser tests.
+
+Files modified from upstream:
+- index.html
+- main.bundle.js
+- manifest.json
+- package.json
+
+Files added:
+- misoclip-tools.js
+- miso-live-inputs.js
+- miso-live-inputs.css
+- README.md
+- NOTICE
+- tests/misoclip-tools.test.cjs
+
+The upstream Apache License 2.0 is reproduced in LICENSE.
+
+
+HikisTrack modifications (September 2026)
+
+The earlier Live Inputs change list above documents the supplied base. This
+distribution replaces its local-only replay-finish behavior with normal completed-
+run submissions, and exports Miso2 without fork-only map/account lock flags.
+
+Additional work: native desktop worker bridge; binary physics result transport;
+practice prefix restoration; unified clip library and keybinds; release threshold;
+ghost tools; PT Index integration; Electron packaging for Windows and macOS.
+
+PolySim by SpideyZac: https://github.com/SpideyZac/polysim
+Its license is included in native/polysim/LICENSE in the source archive.
+The PolySim source and BruteForce runner incorporate the user's existing
+August 2026 local native-engine work, with additional desktop worker support.
+
+PT Index uses the user's supplied September 2026 source: ranking.ts,
+kacky-ranking.ts, identity.ts, map lists and snapshots are retained in index-source
+and index-data. Electron and its bundled third-party license notices accompany
+the packaged runtime. PolyTrack game and asset attribution is retained.
+
+Version 1.1 incorporates the editor, main/preload IPC bridge, BruteForce modules,
+renderer trigger/geometry helpers and bundled dependencies from the user's
+September 5, 2026 BruteForce app.asar. Original clip-row styles are reused with
+map folders and search. Replay application, speed/submit controls and persistent
+input-overlay attachment are integrated with the Rust desktop simulation bridge.

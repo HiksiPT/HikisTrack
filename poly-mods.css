@@ -1,0 +1,28 @@
+.poly-modal{position:fixed;inset:0;z-index:12000;background:#070e22bb;display:grid;place-items:center;pointer-events:auto;color:var(--text-color,#fff)}
+.poly-panel{background:var(--surface-color,#172650);width:min(960px,94vw);max-height:88vh;display:flex;flex-direction:column;padding:22px;box-sizing:border-box;border:1px solid #ffffff30;box-shadow:0 18px 70px #0008;gap:14px}
+.poly-panel h2,.poly-panel p{margin:0}.poly-panel h2{font-size:32px;font-weight:normal}.poly-panel p{font-size:19px;opacity:.8}
+.poly-panel input,.poly-panel textarea{padding:12px;background:var(--surface-secondary-color,#102040);color:inherit;border:1px solid #ffffff40;font:inherit;min-width:0}.poly-panel input[type=search]{width:100%;box-sizing:border-box}.poly-panel textarea{height:230px;resize:vertical}.poly-panel .poly-list{overflow:auto;min-height:80px;max-height:52vh;display:flex;flex-direction:column;gap:8px}.poly-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.poly-row .button{font-size:21px;padding:10px 15px}.poly-row .spacer{flex:1}.poly-panel .poly-entry{text-align:left;display:flex;justify-content:space-between;align-items:center;gap:15px;white-space:normal;padding:14px 18px;font-size:23px}.poly-entry small{font-size:17px;opacity:.7}.poly-entry[aria-pressed=true]{outline:2px solid #7ddfff;outline-offset:-2px}.poly-entry span{overflow:hidden;text-overflow:ellipsis}.poly-error{color:#ffb1a9;min-height:1em}.poly-note{opacity:.7;font-size:18px}.poly-key-row{display:flex;align-items:center;gap:12px;margin:10px}.poly-key-row p{flex:1;font-size:25px;margin:8px}.poly-key-row button{min-width:160px;font-size:22px}.poly-key-row input[type=range]{width:230px}.poly-key-row output{min-width:85px;font-size:22px}.poly-point{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:9000;background:var(--surface-color,#172650);padding:15px;display:flex;gap:12px;align-items:center;pointer-events:auto;border:1px solid #ffffff40;max-width:94vw;flex-wrap:wrap;color:var(--text-color,#fff)}.poly-point input[type=range]{width:280px}.poly-point input[type=number]{width:110px;font:inherit}.poly-point button{font-size:20px}.poly-index{margin-left:auto}.poly-panel table{border-collapse:collapse;width:100%;font-size:21px}.poly-panel th,.poly-panel td{padding:9px;text-align:left;border-bottom:1px solid #ffffff20}.poly-panel th{position:sticky;top:0;background:var(--surface-color,#172650)}
+[data-legacy-save-clip-binding]{display:none!important}
+@media(max-width:700px){.poly-panel{padding:12px}.poly-row .button{font-size:17px}.poly-entry{font-size:19px!important}.poly-key-row{flex-wrap:wrap}}
+
+/* Use the game's scaled UI, original clip rows and native button proportions. */
+.poly-modal{position:absolute;font:inherit}
+.poly-library{pointer-events:auto;z-index:12001}
+.poly-library>.poly-row{padding:0 10px 8px;gap:12px}
+.poly-library>input[type=search]{margin:0 10px 10px;padding:10px 16px;border:0;background:var(--surface-secondary-color);color:var(--text-color);font:24px inherit;font-family:inherit;font-size:24px;outline-offset:2px}
+.poly-library>.poly-note,.poly-library>.poly-error{margin:6px 10px;font-size:18px}
+.poly-library>.poly-error:empty{display:none}
+.poly-library .clip-menu-wrapper{gap:6px}
+.poly-library .clip-menu-wrapper>.button{font-size:22px;margin:0;padding:8px 12px}
+.poly-library .clip-menu-wrapper>.back{margin-right:auto}
+.poly-game-action{display:block;width:100%;margin:10px 0 0;padding:10px 20px;font-size:32px;box-sizing:border-box}
+.poly-replay-actions,.poly-replay-speed{position:absolute;bottom:20px;display:flex;align-items:center;gap:10px;pointer-events:auto;z-index:5}
+.poly-replay-actions{right:20px}.poly-replay-speed{left:20px;font-size:26px}
+.poly-replay-speed select{font:inherit;background:var(--button-color);color:var(--text-color);border:0;padding:8px}
+.input-visualizer-ui{pointer-events:none;z-index:4}
+.track-info-ui>.side-panel>.button.poly-game-action{flex-shrink:0;margin:0 10px 10px;padding:0 0 0 30px;width:calc(100% - 20px);height:50px;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%);text-align:center;font-size:32px}
+.track-info-ui>.side-panel>.button.poly-game-action>img{margin:0 0 0 10px;padding:0;vertical-align:middle;width:30px;height:30px;transition:transform .2s;pointer-events:none}
+.track-info-ui>.side-panel>.button.poly-game-action:hover>img{transform:translateX(10px)}
+.time-bar-ui>.poly-replay-actions,.time-bar-ui>.poly-replay-speed{position:static;margin:6px;gap:6px;flex-shrink:0;font-size:24px}
+.time-bar-ui>.poly-replay-actions>.button{font-size:24px;padding:6px 10px}
+.time-bar-ui>.poly-replay-speed>label{display:none}

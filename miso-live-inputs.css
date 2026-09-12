@@ -1,0 +1,290 @@
+/* Added by the MisoTweaks Live Inputs fork. */
+.miso-live-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    background: rgba(8, 14, 40, 0.76);
+    backdrop-filter: blur(6px);
+    pointer-events: auto;
+}
+
+.miso-live-panel {
+    width: min(760px, 94vw);
+    max-height: min(760px, 90vh);
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color, #fff);
+    background: var(--surface-color, #17285c);
+    box-shadow: 0 18px 70px rgba(0, 0, 0, 0.45);
+    clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+}
+
+.miso-live-panel > header {
+    padding: 18px 24px 16px;
+    background: var(--surface-tertiary-color, #243873);
+}
+
+.miso-live-panel > header h2 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: normal;
+}
+
+.miso-live-panel > header p {
+    margin: 6px 0 0;
+    font-size: 17px;
+    opacity: 0.72;
+}
+
+.miso-live-list {
+    min-height: 160px;
+    padding: 12px;
+    overflow: auto;
+    background: var(--surface-secondary-color, #101d49);
+}
+
+.miso-live-list > button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin: 0 0 8px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    border: 0;
+    color: var(--text-color, #fff);
+    background: var(--button-color, #263c7c);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    clip-path: polygon(5px 0, 100% 0, calc(100% - 5px) 100%, 0 100%);
+}
+
+.miso-live-list > button:hover,
+.miso-live-list > button.selected {
+    background: var(--button-hover-color, #4a63ad);
+}
+
+.miso-live-list > button strong {
+    font-size: 21px;
+    font-weight: normal;
+}
+
+.miso-live-list > button span {
+    font-size: 14px;
+    opacity: 0.68;
+}
+
+.miso-live-list > .empty {
+    margin: 0;
+    padding: 46px 24px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+.miso-live-panel > footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 12px;
+}
+
+.miso-live-panel > footer .button {
+    margin: 0;
+}
+
+.miso-live-panel > footer .button.secondary {
+    margin-right: auto;
+}
+
+.miso-live-panel > footer .button.primary {
+    background: #2e9c67;
+}
+
+.miso-live-panel > footer .button.danger {
+    background: #a13d50;
+}
+
+.miso-converter {
+    width: min(820px, 94vw);
+    overflow-y: auto;
+}
+
+.miso-converter > label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 12px 20px 0;
+    font-size: 15px;
+    opacity: 0.86;
+}
+
+.miso-converter input,
+.miso-converter textarea {
+    box-sizing: border-box;
+    width: 100%;
+    border: 0;
+    outline: none;
+    padding: 10px 12px;
+    color: var(--text-color, #fff);
+    background: var(--surface-secondary-color, #101d49);
+    font: inherit;
+    opacity: 1;
+}
+
+.miso-converter .miso-converter-fps {
+    width: 160px;
+}
+
+.miso-converter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 14px 20px 2px;
+    padding: 12px;
+    background: var(--surface-secondary-color, #101d49);
+}
+
+.miso-converter-options > label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.miso-converter-options input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    accent-color: #57e6a2;
+}
+
+.miso-converter-options input:disabled + span {
+    opacity: 0.45;
+}
+
+.miso-converter .miso-converter-source {
+    min-height: 230px;
+    resize: vertical;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.miso-converter .miso-converter-result {
+    height: 82px;
+    resize: none;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+}
+
+.miso-converter-error {
+    min-height: 20px;
+    margin: 10px 20px 0;
+    color: #ff9aab;
+    font-size: 15px;
+}
+
+.miso-live-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 120px;
+    z-index: 30000;
+    max-width: min(660px, 90vw);
+    padding: 10px 18px;
+    color: #fff;
+    background: rgba(20, 32, 78, 0.96);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    opacity: 0;
+    transform: translate(-50%, 10px);
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none;
+}
+
+.miso-live-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.miso-live-toast.ok {
+    background: rgba(24, 105, 71, 0.97);
+}
+
+.miso-live-toast.warn {
+    background: rgba(137, 53, 66, 0.97);
+}
+
+.miso-extractor {
+    width: min(860px, 94vw);
+    overflow-y: auto;
+}
+
+.miso-extractor-controls {
+    display: flex;
+    gap: 16px;
+    margin: 14px 20px 0;
+}
+
+.miso-extractor-controls > label,
+.miso-extractor-output-label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 15px;
+    opacity: 0.86;
+}
+
+.miso-extractor-controls select,
+.miso-extractor-controls input,
+.miso-extractor-output {
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    padding: 10px 12px;
+    color: var(--text-color, #fff);
+    background: var(--surface-secondary-color, #101d49);
+    font: inherit;
+}
+
+.miso-extractor-output-label {
+    margin: 14px 20px 0;
+}
+
+.miso-extractor-output {
+    width: 100%;
+    min-height: 330px;
+    resize: vertical;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 720px) {
+    .miso-live-overlay {
+        padding: 10px;
+    }
+
+    .miso-live-panel > footer {
+        justify-content: stretch;
+    }
+
+    .miso-live-panel > footer .button {
+        flex: 1 1 42%;
+    }
+
+    .miso-live-panel > footer .button.secondary {
+        margin-right: 0;
+    }
+}
